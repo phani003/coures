@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,6 +10,7 @@
     <script>
 
         const videslist = "automation,Alwayson";
+        const videolist ="watch?v=-WM9VJa-ZUw"
 
         $(document).ready(function () {
             menuload();
@@ -17,12 +18,12 @@
             $("#videos").hide();
         });
 
-
+        /*https://www.youtube.com/watch?v=-WM9VJa-ZUw*/
         function videopalye(videono) {
             //const videslist = "automation.mp4";
             $("#imgsrc").hide();
             $("#videos").show();
-            let videoss = "VIDEOS/" + videslist.split(",")[videono] +".mp4";
+            let videoss = "https://www.youtube.com/" + videolist.split(",")[videono];
             $("#videos").removeAttr('src');
             $("#videos").attr("src", videoss);
             return false;
@@ -58,7 +59,7 @@
         }
 
         body {
-            background-image: url("VIDEOS/sqlwallpaper.jpg");
+            /*background-image: url("VIDEOS/sqlwallpaper.jpg");*/
             background-color: #cccccc;
         }
     </style>
