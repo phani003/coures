@@ -2,9 +2,108 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>
+        Sql Webpage
+    </title>
+    <link href="CSS/Boostrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="JS/JQUERY.js"></script>
+    <script>
+
+        const videslist = "automation,Alwayson";
+
+        $(document).ready(function () {
+            menuload();
+            $("#imgsrc").show();
+            $("#videos").hide();
+        });
+
+
+        function videopalye(videono) {
+            //const videslist = "automation.mp4";
+            $("#imgsrc").hide();
+            $("#videos").show();
+            let videoss = "VIDEOS/" + videslist.split(",")[videono] +".mp4";
+            $("#videos").removeAttr('src');
+            $("#videos").attr("src", videoss);
+            return false;
+        }
+
+        function menuload() {
+
+            const menuslist = videslist.split(",");
+
+            for (i = 0; i < menuslist.length; i++) {
+
+                $("#menuli").append("<li class='menu_li' onclick=videopalye('" + i + "')> " + menuslist[i] + " </li>");
+
+            }
+
+            return false;
+
+        }
+    </script>
+
+    <style>
+        .my_divs {
+            float: left
+        }
+
+        .menu_li {
+            cursor: pointer;
+            color: white;
+        }
+
+        .menu_ul {
+            background-color: black;
+        }
+
+        body {
+            background-image: url("VIDEOS/sqlwallpaper.jpg");
+            background-color: #cccccc;
+        }
+    </style>
 </head>
 <body>
+
+    <div style="width:100%">
+
+        <div>
+            <div style="text-align:center">
+                <h1 style="color:white">SQL COURES VIDEOS</h1>
+            </div>
+
+
+
+            <div>
+
+
+
+                <div style="width:20%" class="my_divs">
+
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <div class="menu_ul">
+                                    <h3 style="color:lightblue;text-align:center">MENU</h3>
+                                    <ul style="background-color: black;" id="menuli"> </ul>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--class="w-100"-->
+                    <!--ratio ratio-16x9-->
+                </div>
+                <div style="width:80%" class="my_divs">
+                    <!--<img id="imgsrc" src="VIDEOS/sqlwallpaper.jpg"  />-->
+                    <video id="videos" alay="center" class="w-100" controls="controls">
+                        <source src="VIDEOS/sqlwallpaper.jpg" type="video/mp4" />
+                    </video>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
