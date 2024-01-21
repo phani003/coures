@@ -9,8 +9,8 @@
     <script type="text/javascript" src="JS/JQUERY.js"></script>
     <script>
 
-        const videslist = "automation,Alwayson";
-        const videolist ="watch?v=-WM9VJa-ZUw"
+        const videslist = "cluster1,cluster2,cluster3,cluster4,cluster5,cluster6,alwayson";
+        const videolist ="u9-qyACul88?si=gDTBSximhKdlbrgo,ziF-7riyJa0?si=QA98XQ9A98GEf1Tq,ucoMZPN-QW4?si=o_0roNuQsw-N0ueE,lWWIS-jT_ss?si=bk8nF8_Qa31o1zQH,XSEqpJfzO9M?si=5v3LcYR06XKHoL2n,ervw7ptHC-g?si=AiBBQx6ycK7owLmq,-WM9VJa-ZUw?si=PyFkzM9_7J8GIlaq"
 
         $(document).ready(function () {
             menuload();
@@ -23,7 +23,7 @@
             //const videslist = "automation.mp4";
             $("#imgsrc").hide();
             $("#videos").show();
-            let videoss = "https://www.youtube.com/" + videolist.split(",")[videono];
+            let videoss = "https://www.youtube.com/embed/" + videolist.split(",")[videono];
             $("#videos").removeAttr('src');
             $("#videos").attr("src", videoss);
             return false;
@@ -97,9 +97,15 @@
                 </div>
                 <div style="width:80%" class="my_divs">
                     <!--<img id="imgsrc" src="VIDEOS/sqlwallpaper.jpg"  />-->
-                    <video id="videos" alay="center" class="w-100" controls="controls">
-                        <source src="VIDEOS/sqlwallpaper.jpg" type="video/mp4" />
-                    </video>
+                    <!--<video alay="center" class="w-100" controls="controls">
+                        <source id="videos" src="VIDEOS/sqlwallpaper.jpg" type="video/mp4" />
+                    </video>-->
+
+
+                    <iframe id="videos" height="560" width="310" class="w-100" controls="controls" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
                 </div>
 
             </div>
